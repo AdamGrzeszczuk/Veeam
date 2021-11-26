@@ -12,12 +12,16 @@ We recommend using standard libraries where appropriate. No need to make another
 Solutions should be uploaded to GitHub or GitLab platform.
 
 
+
 Problem 1
 Implement a program that will launch a specified process and periodically (with a provided time interval) collect the following data about it:
 CPU usage (percent);
 Memory consumption: Working Set and Private Bytes (for Windows systems) or Resident Set Size and Virtual Memory Size (for Linux systems);
 Number of open handles (for Windows systems) or file descriptors (for Linux systems).
 Data collection should be performed all the time the process is running. Path to the executable file for the process and time interval between data collection iterations should be provided by user. Collected data should be stored on the disk. Format of stored data should support automated parsing to potentially allow, for example, drawing of charts.
+
+Solution:
+File: Cpu_Memory_data.py
 
 
 Problem 2
@@ -27,6 +31,16 @@ Synchronization must be one-way: after the synchronization content of the replic
 Synchronization should be performed periodically;
 File creation/copying/removal operations should be logged to a file and to the console output;
 Folder paths, synchronization interval and log file path should be provided using the command line arguments.
+
+Solution:
+File: replica.py
+Arguments:
+		interval in seconds (interger),
+		source directory,
+		destination directory (+ destination folder - will be created if doesn't exist),
+		log file directory + log file name.		
+
+		ex.: python3 replica.py interval src_dir dst_dir log_dir
 
 
 Problem 3
